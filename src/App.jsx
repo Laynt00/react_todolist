@@ -4,7 +4,7 @@ import { useState } from "react"
 
 function App() {
 	const [todos, setTodos] = useState([])
-	const [ todoValue, setTodoValue ] = useState('')
+	const [todoValue, setTodoValue ] = useState('')
 
 	function handleAddTodos(newTodo) {
 		const newTodoList = [...todos, newTodo]
@@ -23,11 +23,16 @@ function App() {
 		setTodoValue(valueToBeEdited)
 		handleDeleteTodos(index)
 	}
+
 	
   return (
     <>
-      <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodos={handleAddTodos} />
-	  <TodoList handleEditTodos={handleEditTodos}handleDeleteTodos={ handleDeleteTodos }todos={todos} />
+    	<TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodos={handleAddTodos} />
+		<TodoList 
+	  			handleEditTodos={handleEditTodos}
+				handleDeleteTodos={ handleDeleteTodos}
+				todos={todos}
+		/>
     </>
   )
 }

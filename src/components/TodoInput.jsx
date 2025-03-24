@@ -8,7 +8,12 @@ export default function TodoInput(props) {
     return (
         <header>
             <input value={todoValue} onChange={(e) => { setTodoValue(e.target.value) }} placeholder="Enter todo..." />
-            <button onClick={() => { handleAddTodos(todoValue) ; setTodoValue('') }}>
+            <button onClick={() => {
+                if (todoValue.trim()) {  // Solo agrega si no está vacío
+                    handleAddTodos(todoValue);
+                    setTodoValue('');
+                }
+            }}>
                 Add
             </button>
         </header>

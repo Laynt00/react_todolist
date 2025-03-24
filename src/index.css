@@ -81,6 +81,10 @@ p {
   background: white;
 }
 
+.todoItem.completed {
+  background-color: #f4f2f2;
+}
+
 .todoItem p {
   flex: 1;
 }
@@ -101,6 +105,19 @@ p {
 .actionsContainer button:hover {
   opacity: 0.7;
 }
+
+.check-btn.checked {
+  color: #4CAF50;
+}
+
+/* Font Awesome aplica sus propios estilos internos a los iconos
+ (específicamente al elemento <i>), lo que puede hacer que no
+  respondan a los estilos que aplicas al botón padre. Por eso
+  necesitamos forzar esta herencia. */
+.check-btn.checked i {
+  color: inherit;
+}
+
 
 
 
